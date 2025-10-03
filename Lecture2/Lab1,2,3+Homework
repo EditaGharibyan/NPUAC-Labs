@@ -1,0 +1,65 @@
+using System;
+
+namespace Lab1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            // Lecture 2 Lab 1
+            Console.WriteLine($"Enter first Number");
+            var firstNumber = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"Enter second Number");
+            int secondNumber = Convert.ToInt32(Console.ReadLine());
+            int sum = firstNumber + secondNumber;
+            int mul = firstNumber * secondNumber;
+            int sub = firstNumber - secondNumber;
+            int div = secondNumber != 0 ? firstNumber + secondNumber : 0;
+            Console.WriteLine(firstNumber + secondNumber);
+            Console.WriteLine("Sum" + sum);
+            Console.WriteLine("Div" + div);
+            Console.WriteLine("Sub" + sub);
+            Console.WriteLine("Mul" + mul);
+            //Lab 2
+            Console.WriteLine("Enter your Age");
+            int age = Convert.ToInt32(Console.ReadLine());
+            if (age >= 18)
+                Console.WriteLine($"Duq Mecahasak eq");
+            else
+            {
+                Console.WriteLine($"Duq Anchapahas eq");
+            }
+            //Lab 3
+            Console.WriteLine("Have you IdCard?");
+            bool haveId = Convert.ToBoolean(Console.ReadLine());
+            Console.WriteLine("Have you Ticket?");
+            bool haveTicket = Convert.ToBoolean(Console.ReadLine());
+            if (haveId && haveTicket)
+                Console.WriteLine("Allow");
+            else
+                Console.WriteLine("Not Allow");
+            //Homework
+            //1
+            Console.WriteLine($"Enter Width of rectangle");
+            double width = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine($"Enter Height of rectangle");
+            double height = Convert.ToDouble(Console.ReadLine());
+            double area = width * height;
+            Console.WriteLine($"Area={area}");
+            //2
+            Console.WriteLine($"Enter radius of circle");
+            double radius = Convert.ToDouble(Console.ReadLine());
+            double circleArea = Math.Pow(radius, 2) * Math.PI * 2;
+            Console.WriteLine($"area of circle {circleArea}");
+            //3
+            Console.WriteLine($"Enter Number");
+            var number = Convert.ToInt32(Console.ReadLine());
+            if (number % 2 == 0) { Console.WriteLine("The Number is even"); }
+            else
+            {
+                Console.WriteLine("Number is odd");
+            }
+        }
+    }
+}

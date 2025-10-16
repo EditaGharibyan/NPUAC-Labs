@@ -1,0 +1,41 @@
+using System.Collections;
+namespace Lect10.Generics
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Queue humans = new Queue() ;
+            humans.Enqueue("Edita");
+            humans.Enqueue("Anahit");
+            humans.Enqueue("Qnarik");
+            humans.Enqueue("Aram");
+            int selection = -1;
+            while( selection==1 || selection==2 || selection==-1)
+            {
+                Console.WriteLine($"1-Add");
+                Console.WriteLine($"2-Serve");
+                selection = Convert.ToInt32(Console.ReadLine());
+                if (selection == 1)
+                {
+                    Console.WriteLine($"Enter Name");
+                    string? name = Console.ReadLine();
+                    humans.Enqueue(name);
+                    Console.WriteLine($"{name} Added in queue");
+                }
+                else if (selection == 2)
+                {
+                    var human =humans.Count!=0 ? humans.Dequeue() : null;
+                    if(human!=null)
+                    Console.WriteLine($"{human} Added in queue");
+                }
+                else
+                {
+                    Console.WriteLine("End");
+                    break;
+                }
+            }
+        }
+    }
+}

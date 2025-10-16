@@ -1,0 +1,26 @@
+using System.Collections;
+using System.Collections.Specialized;
+using System.ComponentModel;
+namespace Lect10.Generics
+{
+    internal class Program
+    {
+     
+        static void Main(string[] args)
+        {
+
+            HybridDictionary productPrice = new HybridDictionary();
+            productPrice["Milk"] = 5000;
+            productPrice["Watter"] = 360;
+            productPrice["Wine"] = 500;
+            productPrice["Macun"] = 15000;
+            foreach (var item in productPrice.Keys)
+            {
+                if (item == "Wine")
+                {
+                    Console.WriteLine($"I find {item} with {productPrice[item]} Price");
+                }
+            }
+        }
+    }
+}

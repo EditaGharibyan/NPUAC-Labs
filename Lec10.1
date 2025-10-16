@@ -1,0 +1,41 @@
+using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.ComponentModel;
+namespace Lect10.Generics
+{
+    internal class Program
+    {
+     
+        public class Student 
+        {
+            public string? Name { get; set; }
+            public double? Grade { get; set; }
+            public string? City { get; set; }
+            public Student(string name, double grade, string city)
+            {
+                Name = name;
+                Grade = grade;
+                City = city;
+            }
+        }
+        static void Main(string[] args)
+        {
+
+            Student st1 = new Student("Nare", 15.2, "Yerevan");
+            Student st2 = new Student("Narek", 7.5, "Yerevan");
+            Student st3 = new Student("Kima", 102, "Yerevan");
+            List<Student> students = new List<Student> ();
+            students.Add(st1);
+            students.Add(st2);
+            students.Add(st3);
+            foreach (var item in students)
+            {
+             if(item.Grade>20)
+                {
+                    Console.WriteLine($"{item.Name} {item.Grade} {item.City}");
+                } 
+            }
+
+        }
+    }
+}

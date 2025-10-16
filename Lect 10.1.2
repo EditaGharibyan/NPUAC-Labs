@@ -1,0 +1,31 @@
+using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.ComponentModel;
+namespace Lect10.Generics
+{
+    internal class Program
+    {
+     
+       
+        static void Main(string[] args)
+        {
+
+            Dictionary<string, string> p = new Dictionary<string, string>();
+            p["Anna"] = "1235";
+            p["Aram"] = "3555";
+            p["Hayk"] = "1222";
+            p["MAri"] = "05535";
+            Console.WriteLine("Enter Name");
+            string? name = Console.ReadLine();
+            foreach (var item in p.Keys)
+            {
+                if (item == name)
+                {
+                    Console.WriteLine($"item : {p[item]}");
+                    break;
+                }
+            }
+            Console.WriteLine("Not found");
+        }
+    }
+}

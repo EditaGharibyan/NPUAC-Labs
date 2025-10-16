@@ -1,0 +1,39 @@
+using System.Collections;
+using System.Collections.Specialized;
+using System.ComponentModel;
+namespace Lect10.Generics
+{
+    internal class Program
+    {
+        public class StringCmp : IComparer
+        {
+            public int Compare(object? x, object? y)
+            {
+                string? xx = Convert.ToString(x);
+                string? yy = Convert.ToString(y);
+                if (xx.Length > yy.Length) return 1;
+                if (xx.Length == yy.Length) return 0;
+                return 1;
+            }
+        }
+        static void Main(string[] args)
+        {
+
+            ArrayList words = new ArrayList()
+            {
+                "Hi",
+                "Es Edita",
+                "em.Aprum em Odzunum",
+                "Baaaaaaaaaaaaaaa",
+            };
+
+            words.Sort(new StringCmp());
+
+            Console.WriteLine("Sorted words");
+            foreach (var word in words)
+            {
+                Console.WriteLine(word);
+            }
+        }
+    }
+}

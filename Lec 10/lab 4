@@ -1,0 +1,25 @@
+using System.Collections;
+using System.ComponentModel;
+namespace Lect10.Generics
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Hashtable phoneBook = new Hashtable();
+            phoneBook.Add("05646465", "Edita");
+            phoneBook.Add("066", "Anna");
+            phoneBook.Add("055", "Mariam");
+            phoneBook.Add("033", "Narek");
+            phoneBook.Add("086", "Karen");
+            foreach (var item in  phoneBook.Keys)
+            {
+                if (phoneBook[item] == "Anna")
+                {
+                    Console.WriteLine($"{item}");
+                }
+            }
+        }
+    }
+}

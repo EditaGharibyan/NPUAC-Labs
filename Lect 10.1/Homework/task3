@@ -1,0 +1,75 @@
+using System;
+using System.Collections.Generic;
+
+namespace Lect10.Generics
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Stack<string> browserHistory = new Stack<string>();
+
+            while (true)
+            {
+                Console.WriteLine("\nChoose an action:");
+                Console.WriteLine("1. Visit a new page (Push)");
+                Console.WriteLine("2. Undo last page (Pop)");
+                Console.WriteLine("3. Show history");
+                Console.WriteLine("4. Exit");
+                Console.Write("Your choice: ");
+
+                string? choice = Console.ReadLine();
+
+                switch (choice)
+                {
+                    case "1":
+                        Console.Write("Enter page name: ");
+                        string? page = Console.ReadLine();
+                        if (!string.IsNullOrWhiteSpace(page))
+                        {
+                            browserHistory.Push(page);
+                            Console.WriteLine($"Pushed '{page}'.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Page name cannot be empty.");
+                        }
+                        break;
+
+                    case "2":
+                        if (browserHistory.Count > 0)
+                        {
+                            string lastPage = browserHistory.Pop();
+                            Console.WriteLine($"Undo: Returned from '{lastPage}'.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("No pages to undo.");
+                        }
+                        break;
+
+                    case "3":
+                        if (browserHistory.Count == 0)
+                        {
+                            Console.WriteLine("No pages in history.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Current browser history (most recent first):");
+                            foreach (var p in browserHistory)
+                                Console.WriteLine($"- {p}");
+                        }
+                        break;
+
+                    case "4":
+                        Console.WriteLine("Exiting program...");
+                        return;
+
+                    default:
+                        Console.WriteLine("Invalid choice. Try again.");
+                        break;
+                }
+            }
+        }
+    }
+}

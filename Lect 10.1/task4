@@ -1,0 +1,22 @@
+using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.ComponentModel;
+namespace Lect10.Generics
+{
+    internal class Program
+    {
+
+
+        static void Main(string[] args)
+        {
+
+            Console.WriteLine("Enter text");
+            string? text = Console.ReadLine();
+            var words = text.Split(" ");
+            HashSet<string> uniqueWords = new HashSet<string>(words);
+            Console.WriteLine($"{uniqueWords.Count()}");
+
+
+        }
+    }
+}

@@ -1,0 +1,42 @@
+using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.ComponentModel;
+namespace Lect10.Generics
+{
+    internal class Program
+    {
+
+
+        static void Main(string[] args)
+        {
+
+            Dictionary<string, double> products = new Dictionary<string, double>()
+            {
+                { "Milk", 500 },
+                { "Butter", 700 },
+                { "Panir", 650 },
+                { "Sugar", 900 },
+            };
+
+            Console.WriteLine("products");
+            foreach (var p in products)
+            {
+                Console.WriteLine($"{p.Key} - {p.Value} դրամ");
+            }
+            Console.WriteLine("\nEnter Product NAme");
+            string name = Console.ReadLine()!;
+            if (products.ContainsKey(name))
+            {
+                Console.WriteLine($"{name} {products[name]}");
+            }
+            else
+            {
+                Console.WriteLine($"CAnt found{name}' ");
+            }
+
+            
+
+
+        }
+    }
+}

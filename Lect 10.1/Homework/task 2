@@ -1,0 +1,80 @@
+using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.ComponentModel;
+namespace Lect10.Generics
+{
+    internal class Program
+    {
+
+
+        static void Main(string[] args)
+        {
+
+            Queue<string> tasks = new Queue<string>();
+
+            while (true)
+            {
+                Console.WriteLine("\nSelect");
+                Console.WriteLine("1. Add Task");
+                Console.WriteLine("2. Doo next Task");
+                Console.WriteLine("3.Show Tasks");
+                Console.WriteLine("4. Exit");
+                Console.Write("Choice՝ ");
+
+                string? choice = Console.ReadLine();
+
+                switch (choice)
+                {
+                    case "1":
+                        Console.Write("Enter Tasks name՝ ");
+                        string? task = Console.ReadLine();
+                        if (!string.IsNullOrWhiteSpace(task))
+                        {
+                            tasks.Enqueue(task);
+                            Console.WriteLine($"'{task}' Added in queue");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Task cnat be with empty name։");
+                        }
+                        break;
+
+                    case "2":
+                        if (tasks.Count > 0)
+                        {
+                            string nextTask = tasks.Dequeue();
+                            Console.WriteLine($"Doing {nextTask}");
+                        }
+                        else
+                        {
+                            Console.WriteLine("No Task ։");
+                        }
+                        break;
+
+                    case "3":
+                        if (tasks.Count == 0)
+                        {
+                            Console.WriteLine("No Task։");
+                        }
+                        else
+                        {
+                            Console.WriteLine(" Tasks in queue");
+                            foreach (var t in tasks)
+                            {
+                                Console.WriteLine($"- {t}");
+                            }
+                        }
+                        break;
+
+                    case "4":
+                        Console.WriteLine("Exit");
+                        return;
+
+                    default:
+                        Console.WriteLine("Wrong selection");
+                        break;
+                }
+            }
+        }
+    }
+}

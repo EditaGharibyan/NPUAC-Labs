@@ -1,0 +1,38 @@
+using System.Collections;
+namespace Lect10.Generics
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Stack actions = new Stack() ;
+            actions.Push("Add");
+            actions.Push("Delete");
+            actions.Push("Create");
+            actions.Push("Update");
+            int selection = -1;
+            while( selection==1 || selection==-1)
+            {
+                Console.WriteLine($"Enter 1 for Undo");
+                selection = Convert.ToInt32(Console.ReadLine());
+                if (selection == 1)
+                {
+                    if (actions.Count == 0)
+                    {
+                        Console.WriteLine("Stack is Empty");
+                        break;
+                    }
+                    var action = actions.Pop();
+                    Console.WriteLine($"{action} REMOVED from stack");
+                }
+                
+                else
+                {
+                    Console.WriteLine("End");
+                    break;
+                }
+            }
+        }
+    }
+}

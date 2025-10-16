@@ -1,0 +1,23 @@
+using System.Collections;
+using System.Collections.Specialized;
+using System.ComponentModel;
+namespace Lect10.Generics
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            OrderedDictionary students = new OrderedDictionary();
+            students.Add(1, "Edita");
+            students.Add(2, "Narek");
+            students.Add(3, "Armen");
+            students.Add(4, "Araqsya");
+            foreach (var item in students.Values)
+            {
+                Console.WriteLine($"{item}");
+                break;
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+using System.Collections;
+using System.Collections.Specialized;
+using System.ComponentModel;
+namespace Lect10.Generics
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            SortedList students = new SortedList();
+            students.Add("SusAnna", 15);
+            students.Add("Nare", 4);
+            students.Add("Anahit", 85);
+            students.Add("XAraqs", 18);
+            foreach (var item in students.Values)
+            {
+                Console.WriteLine(item);
+            }
+        }
+    }
+}
